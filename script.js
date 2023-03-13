@@ -1,5 +1,4 @@
 let operation;
-let number;
 let a;
 let b;
 let result;
@@ -19,22 +18,19 @@ do {
     case '/': 
     case 'pow':
       do {
-        number = (prompt('Введите первое число'));
-        a = +number;
-      } while(number === '' || +number !== a);
+        a = +prompt('Введите первое число');
+      } while(a === '' || !a);
 
       do {
-        number = (prompt('Введите второе число'));
-        b = +number;
-      } while(number === '' || +number !== b);
+        b = +prompt('Введите второе число');
+      } while(b === '' || !b);
       break;
 
     case 'sin':
     case 'cos':
       do {
-        number = (prompt('Введите число в радианах'));
-        a = +number;
-      } while(number === '' || +number !== a);
+        a = +prompt('Введите число в радианах');
+      } while(a === '' || !a);
       break;
   }
 
