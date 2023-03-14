@@ -7,21 +7,21 @@ let array = [];
 let shouldRepeat;
 
 function validateOperation() {
+  let symbol;
   do {
-    operation = prompt('Выберите операцию (введите символ(ы)): \n Сложение: + \n Вычитание: - \n Умножение: * \n Деление: / \n Sin: sin \n Cos: cos \n Возведение в степень: pow \n История вычислений: history');
-  } while(operation !== '+' && operation !== '-' && operation !== '*' && operation !== '/' && operation !== 'pow' && operation !== 'sin'  && operation !== 'cos' && operation !== 'history');
-  return operation;
+    symbol = prompt('Выберите операцию (введите символ(ы)): \n Сложение: + \n Вычитание: - \n Умножение: * \n Деление: / \n Sin: sin \n Cos: cos \n Возведение в степень: pow \n История вычислений: history');
+  } while(symbol !== '+' && symbol !== '-' && symbol !== '*' && symbol !== '/' && symbol !== 'pow' && symbol !== 'sin'  && symbol !== 'cos' && symbol !== 'history');
+  return symbol;
 }
-
 
 function validateInput(i) {
+  let number;
   do {
-    number = +prompt(i);
-  } while(number === '' || !number);
-  return number;
+    number = prompt(i);
+  } while(!+number && number !== '0');
+  return +number;
 }
  
-
 function sum(a, b) {
   return a + b;
 }
