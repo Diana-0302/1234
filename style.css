@@ -47,12 +47,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  color: #18272e;
-  background-color: #ffc728;
-  border: 1px solid #ffc728;
-
-}
 
 p {
   margin-top: 10px;

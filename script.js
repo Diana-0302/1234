@@ -6,6 +6,7 @@ const pAlert = document.getElementById('alert');
 buttonLogin.disabled = true;
 let emailValidation = false;
 let passwordValidation = false;
+let redirectValue = false
 
 
 function checkInputs() {
@@ -40,10 +41,9 @@ function checkPassword() {
   passwordValidation = password.value.length < 6;
 }
 
-
-buttonLogin.addEventListener('click', () => {
-  checkEmail();
-  checkPassword();
+function checkError(){
+  checkEmail()
+  checkPassword()
   if (!emailValidation && passwordValidation) {
     pAlert.innerText = 'Неверный логин и пароль';
     password.value = '';
@@ -64,8 +64,19 @@ buttonLogin.addEventListener('click', () => {
     pAlert.innerText = '';
     window.location.replace("https://www.google.com/");
   } 
+}
 
+
+
+login.addEventListener('blur', checkError)
+password.addEventListener('blur', checkError)
+
+
+
+buttonLogin.addEventListener('click', () => {
+  checkError()
+  if (redirectValue === true){
+  window.location.replace("https://www.google.com/")
+  }
 })
-
-
 
