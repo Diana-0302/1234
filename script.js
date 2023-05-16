@@ -199,31 +199,42 @@ const test = [
       89, 94, 94, 64, 36, 56, 55,
     ],
   },
+  {
+    name: "Jamal",
+    specialty: "Product Directives Executive",
+    marks: [
+      1,2,3,4,
+    ],
+  },
+
 ];
 
 const averageMark = function (array) {
-  array.forEach(function (element) {
+  let newArray = array;
+  newArray.forEach(function (element) {
     let sum = element["marks"].reduce(function (accumulator, current) {
       accumulator = accumulator + current;
       return accumulator;
     }, 0);
     element["averageMark"] = sum / element["marks"].length;
   });
+  return newArray
 };
 
-//averageMark(test);
-// console.log(test);
+
+// console.log(averageMark(test));
 
 const expelledStudents = function (array) {
-  let students = array.filter(function (element) {
+  let newArray = averageMark(array);
+  let students = newArray.filter(function (element) {
       return element.averageMark < 50;
     }).map(function (element) {
       return element["name"];
     });
-  console.log(students);
+  return students
 };
 
-//expelledStudents(test);
+// console.log(expelledStudents(test));
 
 function findMediana(array) {
   let mediana;
@@ -255,23 +266,20 @@ const newStudent = function (name, specialty, marks) {
 // console.log(test);
 
 function sortMarks(array) {
-  let newArray = array.slice().sort(function (a, b) {
+  let newArray = averageMark(array).slice().sort(function (a, b) {
       return b["averageMark"] - a["averageMark"];
     }).map(function (element) {
       return `${element["name"]} - ${element["averageMark"]}`;
     });
-  console.log(newArray);
+  return newArray
 }
 
-//sortMarks(test);
+// console.log(sortMarks(test));
 
 function findBestStudents(array) {
-  let bestStudents = array.sort(function (a, b) {
-      return b["averageMark"] - a["averageMark"];
-    }).map(function (element) {
-      return `${element["name"]} - ${element["averageMark"]}`;
-    }).slice(0, 5);
-  console.log(bestStudents);
+  let bestStudents = sortMarks(array).slice(0, 5);
+  return bestStudents
 }
 
-//findBestStudents(test);
+// console.log(findBestStudents(test));
+
