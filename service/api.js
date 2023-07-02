@@ -18,24 +18,22 @@ export const api = (() => {
         }
 
         setToken(token){
-            fetch(`${API_URL}users/1`, {
-                method: 'PUT',
-                headers: {
-                    'Authorization': token
-                }
-            })
-            
             localStorage.setItem('token', token)
         }
 
         loadUserList(page){
-            return fetch(`${API_URL}users?page=${page}`)
+            return fetch(`${API_URL}users?page=${page}`,{
+                headres: {
+                    'Authorization': localStorage.getItem('token')
+                }
+            })
             .then(response => response.json())
         }
 
 
         getTotalPages(){
             this._xhr.open('GET', 'https://reqres.in/api/users?page=1', false)
+            this._xhr.setRequestHeader('Authorization', localStorage.getItem('token'))
             this._xhr.send()
             return JSON.parse(this._xhr.response)["total_pages"]
 
@@ -45,7 +43,8 @@ export const api = (() => {
             return fetch(`${API_URL}users`, {
                 method: 'POST',
                 headers: {
-                    'content-type': "application/json"
+                    'content-type': "application/json",
+                    'Authorization': localStorage.getItem('token')
                 },
                 body: JSON.stringify(user)
                 
@@ -57,7 +56,8 @@ export const api = (() => {
             return fetch(`${API_URL}users/${id}`, {
                 method: 'PUT',
                 headers: {
-                    'content-type': "application/json"
+                    'content-type': "application/json",
+                    'Authorization': localStorage.getItem('token')
                 },
                 body: JSON.stringify(user)
                 
@@ -67,7 +67,8 @@ export const api = (() => {
 
         deleteNewUsers(id){
             fetch(`${API_URL}users/${id}`, {
-                method: 'DELETE'
+                method: 'DELETE',
+                'Authorization': localStorage.getItem('token')
             })
         }
 

@@ -21,9 +21,12 @@ const inputJob = document.getElementById('inputJob');
 const inputID = document.getElementById('inputID');
 
 const loginForm = document.getElementById('loginForm');
+const mainDiv = document.getElementById('main-div');
 
 if (localStorage.getItem('token') === "QpwL5tke4Pnpja7X4") {
     loginForm.classList.toggle("displayNone");
+    mainDiv.classList.toggle("displayNone");
+    logOutBtn.classList.toggle("displayNone");
 }
 
 // ======================================================================================================
@@ -37,7 +40,7 @@ const pAlert = document.getElementById('alert');
 buttonLogin.disabled = true;
 let emailValidation = false;
 let passwordValidation = false;
-let redirectValue = false
+let redirectValue = false;
 
 
 function checkInputs() {
@@ -99,6 +102,8 @@ buttonLogin.addEventListener('click', () => {
         }
         else {
             loginForm.classList.toggle("displayNone");
+            mainDiv.classList.toggle("displayNone");
+            logOutBtn.classList.toggle("displayNone");
             let token = response["token"]
     
             api.setToken(token)
@@ -117,7 +122,17 @@ buttonLogin.addEventListener('click', () => {
 
 
 
+
+  
+
+
+
+
 // ======================================================================================================
+
+
+
+
 
 
 let currentPage = 1
@@ -244,8 +259,12 @@ delBtn.addEventListener('click', function(){
 
 logOutBtn.addEventListener('click', function(){
     loginForm.classList.toggle("displayNone");
+    mainDiv.classList.toggle("displayNone");
+    logOutBtn.classList.toggle("displayNone");
     localStorage.removeItem('token');
 })
+
+
 
 
 
