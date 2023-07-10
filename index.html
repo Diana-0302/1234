@@ -33,20 +33,42 @@
         <input type="text" placeholder="last_name" name="last_name" id="inputLastName">
         <input type="email" placeholder="email" name="email" id="inputEmail">
         <input type="text" placeholder="job" name="job" id="inputJob">
-        <input type="text" placeholder="id, only for del or upd" name="id" id="inputID">
       </form>
       <div class="buttons">
         <button type="button" id="sendBtn">Send</button>
-        <button type="button" id="updBtn">Update</button>
-        <button type="button" id="delBtn">Delete</button>
       </div>
     </div>
     <div class="list">
       <h2>New Users</h2>
       <div id="newUserList">
+        <ul>
+          <li id="first_name"></li>
+          <li id="second_name"></li>
+          <li id="emaill"></li>
+          <li id="job"></li>
+          <li id="id"></li>
+        </ul>
+      </div>
+      <div class="buttons">
+        <button type="button" id="prevBtnNew">prev</button>
+        <button type="button" id="editBtn">Edit</button>
+        <button type="button" id="delBtn">Delete</button>
+        <button type="button" id="nextBtnNew">next</button>
       </div>
     </div>
   </div>
+
+  <div class="overlay displayNone" id="updateForm">
+    <input type="text" placeholder="first_name" name="first_name" id="inputFirstNameNew">
+    <input type="text" placeholder="last_name" name="last_name" id="inputLastNameNew">
+    <input type="email" placeholder="email" name="email" id="inputEmailNew">
+    <input type="text" placeholder="job" name="job" id="inputJobNew">
+    <div class="buttons">
+      <button type="button" id="updBtn">Apply</button>
+    </div>
+  </div>
+
+
 
   <div class="overlay" id="loginForm">
     <div class="login-form">

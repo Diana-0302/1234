@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: flex-start; 
     margin: 30px auto;
-    max-width: 800px;
+    max-width: 1200px;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
@@ -79,14 +79,22 @@
     z-index: 999;
 }
 
-.login-form {
+.login-form{
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.login-form input {
+#updateForm{
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+}
+
+
+.login-form input, #updateForm input{
     width: 100%;
     max-width: 400px;
     margin-bottom: 10px;
@@ -95,7 +103,7 @@
     border-radius: 5px;
 }
 
-.login-form button {
+.login-form button, #updateForm button{
     padding: 10px 20px;
     background-color: #4CAF50;
     color: #ffffff;
