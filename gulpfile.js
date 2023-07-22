@@ -2,19 +2,19 @@ const gulp = require('gulp')
 const sass = require('gulp-sass')(require('sass'));
 const concatCss = require('gulp-concat-css');
 const uglify = require('gulp-uglify');
-const pipeline = require('readable-stream').pipeline;
+
 
 function buildStyles() {
     return gulp.src('./style/**/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(concatCss("styles/bundle.css"))
-        .pipe(gulp.dest('./css'));
+        .pipe(concatCss("bundle.css"))
+        .pipe(gulp.dest('./dist/css'));
 };
 
 function minifyJS() {
     return gulp.src('./js/**/*.js')
         .pipe(uglify())
-        .pipe(gulp.dest('./srcJS'));
+        .pipe(gulp.dest('./dist/srcJS'));
 }
 
 function modeIndexHTML() {
@@ -45,3 +45,4 @@ exports.modeIndexHTML = modeIndexHTML;
 exports.watchStyles = watchStyles;
 exports.watchJS = watchJS;
 exports.watchHTML = watchHTML;
+exports.build = gulp.series(modeIndexHTML, gulp.parallel(minifyJS, buildStyles))

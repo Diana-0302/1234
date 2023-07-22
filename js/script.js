@@ -5,37 +5,37 @@ import { api } from './service/api.js';
 
 
 
-const usersList = document.getElementById('usersList');
-const newUserList = document.getElementById('newUserList');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const sendBtn = document.getElementById('sendBtn');
-const updBtn = document.getElementById('updBtn');
-const delBtn = document.getElementById('delBtn');
-const editBtn = document.getElementById('editBtn');
-const logOutBtn = document.getElementById('logOutBtn');
+const usersList = document.getElementById('usersList')
+const newUserList = document.getElementById('newUserList')
+const prevBtn = document.getElementById('prevBtn')
+const nextBtn = document.getElementById('nextBtn')
+const sendBtn = document.getElementById('sendBtn')
+const updBtn = document.getElementById('updBtn')
+const delBtn = document.getElementById('delBtn')
+const editBtn = document.getElementById('editBtn')
+const logOutBtn = document.getElementById('logOutBtn')
 
-const inputFirstName = document.getElementById('inputFirstName');
-const inputLastName = document.getElementById('inputLastName');
-const inputEmail = document.getElementById('inputEmail');
-const inputJob = document.getElementById('inputJob');
-
-
-const loginForm = document.getElementById('loginForm');
-const mainDiv = document.getElementById('main-div');
+const inputFirstName = document.getElementById('inputFirstName')
+const inputLastName = document.getElementById('inputLastName')
+const inputEmail = document.getElementById('inputEmail')
+const inputJob = document.getElementById('inputJob')
 
 
-const updateForm = document.getElementById('updateForm');
-const inputFirstNameNew = document.getElementById('inputFirstNameNew');
-const inputLastNameNew = document.getElementById('inputLastNameNew');
-const inputEmailNew = document.getElementById('inputEmailNew');
-const inputJobNew = document.getElementById('inputJobNew');
+const loginForm = document.getElementById('loginForm')
+const mainDiv = document.getElementById('main-div')
+
+
+const updateForm = document.getElementById('updateForm')
+const inputFirstNameNew = document.getElementById('inputFirstNameNew')
+const inputLastNameNew = document.getElementById('inputLastNameNew')
+const inputEmailNew = document.getElementById('inputEmailNew')
+const inputJobNew = document.getElementById('inputJobNew')
 
 
 
-let currentPage = 1;
-let totalPages = null;
-let request = null;
+let currentPage = 1
+let totalPages = null
+let request = null
 
 
 
@@ -49,23 +49,23 @@ if (localStorage.getItem('token')) {
 
 
 //=========================================================================================================
-const newUsersFirstName = document.getElementById('first_name');
-const newUsersSecondName = document.getElementById('second_name');
-const newUsersEmail = document.getElementById('emaill');
-const newUsersJob = document.getElementById('job');
-const newUsersID = document.getElementById('id');
+const newUsersFirstName = document.getElementById('first_name')
+const newUsersSecondName = document.getElementById('second_name')
+const newUsersEmail = document.getElementById('emaill')
+const newUsersJob = document.getElementById('job')
+const newUsersID = document.getElementById('id')
 
-const prevBtnNew = document.getElementById('prevBtnNew');
-const nextBtnNew = document.getElementById('nextBtnNew');
-prevBtnNew.disabled = true;
-nextBtnNew.disabled = true;
-editBtn.disabled = true;
-delBtn.disabled = true;
+const prevBtnNew = document.getElementById('prevBtnNew')
+const nextBtnNew = document.getElementById('nextBtnNew')
+prevBtnNew.disabled = true
+nextBtnNew.disabled = true
+editBtn.disabled = true
+delBtn.disabled = true
 
 
-let newUsers = [];
-let currentUser = -1;
-let currID = null;
+let newUsers = []
+let currentUser = -1
+let currID = null
 
 
 
