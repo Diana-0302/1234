@@ -1,0 +1,21 @@
+.album-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .album-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+  }
+  
+  .album-link {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .album-link:hover {
+    text-decoration: underline;
+  }
+  
