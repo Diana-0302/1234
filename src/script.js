@@ -1,12 +1,12 @@
 import "./styles/style.scss";
 
 import React, { useState, useEffect } from 'react';
-import {createRoot} from 'react-dom/client';
-import { BrowserRouter, HashRouter, Route, Routes} from "react-router-dom";
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 
-import {UsersList} from './components/UsersList/UsersList.jsx'
-import {AlbomList} from './components/AlbomsList/AlbomList.jsx'
-import {Photos} from './components/Photos/Photos.jsx'
+import { UsersList } from './components/UsersList/UsersList.jsx'
+import { AlbomList } from './components/AlbomsList/AlbomList.jsx'
+import { Photos } from './components/Photos/Photos.jsx'
 
 
 
