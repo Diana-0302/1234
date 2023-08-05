@@ -1,21 +1,35 @@
+
 .album-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .album-item {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-  }
-  
-  .album-link {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .album-link:hover {
-    text-decoration: underline;
-  }
-  
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.album-item {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.album-item:hover {
+  background-color: #f0f0f0;
+}
+
+.album-title {
+  font-size: 18px;
+}
+
+.album-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.album-link:hover {
+  color: #0056b3;
+}

@@ -10,7 +10,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-
+    
   },
   module: {
     rules: [
@@ -36,7 +36,7 @@ module.exports = {
         }
       }
     ],
-
+    
   },
   plugins: [
     new webpack.ProgressPlugin(),

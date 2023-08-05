@@ -1,12 +1,12 @@
 import "./styles/style.scss";
 
 import React, { useState, useEffect } from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
+import {createRoot} from 'react-dom/client';
+import { BrowserRouter, HashRouter, Route, Routes} from "react-router-dom";
 
-import { UsersList } from './components/UsersList/UsersList.jsx'
-import { AlbomList } from './components/AlbomsList/AlbomList.jsx'
-import { Photos } from './components/Photos/Photos.jsx'
+import {UsersList} from './components/UsersList/UsersList.jsx'
+import {AlbomList} from './components/AlbomsList/AlbomList.jsx'
+import {Photos} from './components/Photos/Photos.jsx'
 
 
 
@@ -27,13 +27,10 @@ const App = () => {
     return (
         <>
             <Routes>
-                <Route path="/" element={<UsersList onSelectUser={handleUserSelect} />}>
-                    <Route path=":id" element={<AlbomList selectedUserId={selectedUserId} onSelectAlbum={handleAlbumSelect} />}>
-                        <Route path=":id" element={<Photos selectedAlbumId={selectedAlbumId} />} />
-                    </Route>
-                </Route>
+                <Route path="/" element={<UsersList onSelectUser={handleUserSelect} />}></Route>
+                <Route path="/albums/:id" element={<AlbomList selectedUserId={selectedUserId} onSelectAlbum={handleAlbumSelect} />}></Route>
+                <Route path="/albums/:id/photos/:id" element={<Photos selectedAlbumId={selectedAlbumId} />} />
             </Routes>
-
         </>
     );
 };

@@ -1,21 +1,35 @@
+
 .user-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .user-item {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-  }
-  
-  .user-link {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .user-link:hover {
-    text-decoration: underline;
-  }
-  
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-item {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.user-item:hover {
+  background-color: #f0f0f0;
+}
+
+.user-name {
+  font-size: 18px;
+}
+
+.user-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.user-link:hover {
+  color: #0056b3;
+}

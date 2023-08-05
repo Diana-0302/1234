@@ -17,11 +17,11 @@ export const UsersList = ({ onSelectUser }) => {
 
     return (
         <>
-            <ul>
+            <ul className="user-list ">
                 {users.map((user) => (
-                    <li key={user.id}>
-                        <h3>{user.name}</h3>
-                        <Link to={'' + user.id} onClick={() => onSelectUser(user.id)}>Albums</Link>
+                    <li key={user.id} className="user-item">
+                        <h3 className="user-name">{user.name}</h3>
+                        <Link className="user-link" to={'albums/' + user.id} onClick={() => onSelectUser(user.id)}>Albums</Link>
                     </li>
                 ))}
             </ul>

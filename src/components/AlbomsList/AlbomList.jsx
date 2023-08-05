@@ -18,11 +18,11 @@ export const AlbomList = ({ selectedUserId, onSelectAlbum }) => {
 
     return (
         <>
-            <ul>
+            <ul className='album-list'>
                 {albums.map((album) => (
-                    <li key={album.id}>
-                        <h3>{album.title}</h3>
-                        <Link to={"" + "album.id"} onClick={() => onSelectAlbum(album.id)}>Photos</Link>
+                    <li key={album.id} className="album-item">
+                        <h3 className="album-title">{album.title}</h3>
+                        <Link to={'photos/' + album.id} onClick={() => onSelectAlbum(album.id)} className="album-link">Photos</Link>
                     </li>
                 ))}
             </ul>

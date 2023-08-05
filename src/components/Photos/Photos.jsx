@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import './Photos.scss'
 
 
@@ -7,7 +6,7 @@ export const Photos = ({ selectedAlbumId }) => {
     const [photos, setPhotos] = useState([]);
 
     useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${selectedAlbumId}`)
+        fetch(`https://jsonplaceholder.typicode.com/photos?albumId=1`)
             .then((response) => response.json())
             .then((json) => {
                 setPhotos(json);
